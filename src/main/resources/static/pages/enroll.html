@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>XianLin|注册</title>
+    <link href="../img/XianLinICO.ico" rel="shortcut icon" type="image/x-icon">
+    <!--引入css-->
+    <link href="../css/enroll.css" rel="stylesheet">
+    <script src="../js/vue.js"></script>
+    <link href="../element-ui/lib/theme-chalk/index.css" rel="stylesheet">
+    <script src="../element-ui/lib/index.js"></script>
+    <script src="../js/axios.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <el-container>
+        <el-header></el-header>
+    </el-container>
+
+    <el-container>
+        <el-container>
+            <el-aside width="70%"></el-aside>
+            <el-main>
+                <el-header><h1>注册</h1></el-header>
+                <el-form :model="userForm" label-width="80px" ref="userForm">
+                    <el-row>
+                        <el-col :span="21">
+                            <div class="grid-content bg-purple-dark">
+                                <el-form label="userQQ">
+                                    <!--                    <el-input v-model="form.QQ" placeholder="请输入内容"></el-input>-->
+                                    <el-form :model="userForm" class="demo-ruleForm" label-width="100px" ref="userForm">
+                                        <el-form-item
+                                                label="QQ"
+                                                prop="userQQ"
+                                                :rules="[{ required: true, message: 'QQ不能为空'},{ type: 'number', message: 'QQ必须为数字值'}]">
+                                            <el-input autocomplete="off" type="userQQ" v-model.number="userForm.userQQ"
+                                                      placeholder="请输入QQ号" @blur="obtain"></el-input>
+                                        </el-form-item>
+                                    </el-form>
+                                </el-form>
+                                <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="100px"
+                                         class="demo-ruleForm">
+                                    <el-form-item label="密码" prop="pass">
+                                        <el-input type="password" v-model="ruleForm.pass" autocomplete="off"
+                                                  placeholder="请输入密码(并非QQ密码)"></el-input>
+                                    </el-form-item>
+                                    <el-form-item label="确认密码" prop="checkPass">
+                                        <el-input type="password" v-model="ruleForm.checkPass" autocomplete="off"
+                                                  placeholder="请再次输入密码"></el-input>
+                                    </el-form-item>
+                                    <el-form-item>
+                                        <el-button type="primary" @click="submitForm('ruleForm')">下一步</el-button>
+                                        <div>
+                                            <el-header></el-header>
+                                            <el-link href="./login.html" type="success">已有账号?点我登录</el-link>
+                                        </div>
+                                    </el-form-item>
+                                </el-form>
+                            </div>
+                        </el-col>
+                    </el-row>
+                </el-form>
+            </el-main>
+        </el-container>
+        <el-aside width="15%"></el-aside>
+    </el-container>
+
+
+    <el-dialog
+            title="提示"
+            :visible.sync="dialogVisible"
+            width="30%"
+            :close-on-click-modal="false"
+    >
+        <span>
+            <el-col :span="21">
+                <div class="grid-content bg-purple-dark">
+                    <el-form label="name">
+                        <el-form :model="userForm" class="demo-ruleForm" label-width="100px" ref="userForm">
+                            <el-form-item
+                                    label="QQ:">
+                                {{userForm.userQQ}}
+                            </el-form-item>
+                        </el-form>
+                        <!--                    <el-input v-model="form.QQ" placeholder="请输入内容"></el-input>-->
+                        <el-form :model="userForm" class="demo-ruleForm" label-width="100px" ref="userForm">
+                            <el-form-item
+                                    label="昵称"
+                                    prop="userName"
+                                    :rules="[{ required: true, message: '昵称不能为空'}]">
+                                <el-input autocomplete="off" type="userName" v-model.number="userForm.userName"
+                                          placeholder="请输入昵称"></el-input>
+                            </el-form-item>
+
+                        </el-form>
+                        <el-form :model="userForm" class="demo-ruleForm" label-width="100px" ref="userForm">
+                            <el-form-item
+                                    label="头像:">
+                                <div class="demo-basic--circle">
+                                    <div class="block"><el-avatar :size="100" :src="userForm.imgUrl"
+                                                                  shape="square"></el-avatar></div>
+                                </div>
+                            </el-form-item>
+                        </el-form>
+                    </el-form>
+                </div>
+
+            </el-col>
+        </span>
+        <span slot="footer" class="dialog-footer">
+    <el-button @click="dialogVisible = false">取 消</el-button>
+    <el-button type="primary" @click="open">确 定</el-button>
+            <p/>
+            <el-alert
+                    title="昵称要求:常用汉字,大小写字母,数字,下划线;不能有特殊字符"
+                    type="warning"
+                    center
+                    :closable="false"
+                    show-icon>
+            </el-alert>
+  </span>
+    </el-dialog>
+
+
+</div>
+<!--引入框架-->
+
+<script src="../js/enroll.js"></script>
+</body>
+</html>
