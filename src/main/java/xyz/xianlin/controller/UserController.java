@@ -24,7 +24,6 @@ public class UserController {
         UserData userDataRet = userService.selectByUserQQAndUserPassword(userData);
         return new Result(userDataRet != null ? Code.POST_OK : Code.POST_ERR, userDataRet);
     }
-    
     @PutMapping // 指定请求方式为PUT, 用于插入新用户
     public Result insertUser(@RequestBody UserData userData) {
         try {

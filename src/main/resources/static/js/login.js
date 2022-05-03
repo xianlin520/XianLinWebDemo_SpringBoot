@@ -6,7 +6,7 @@ new Vue({
         onSubmit() {
             _this = this;
             axios.post("/users", this.form).then(function (response) {
-                if (response.data.code == 20051) {
+                if (response.data.code == 20011) {
                     // alert("登录成功");
                     _this.$message.success("登录成功");
                 } else {

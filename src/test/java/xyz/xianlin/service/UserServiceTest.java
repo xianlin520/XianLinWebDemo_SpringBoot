@@ -7,12 +7,5 @@ import xyz.xianlin.domain.UserData;
 
 @SpringBootTest
 public class UserServiceTest {
-    @Autowired
-    private UserService userService;
-    
-    @Test
-    public void selectByUserQQTest() {
-        UserData userData = userService.selectByUserQQ("10086");
-        System.out.println(userData);
-    }
+
 }

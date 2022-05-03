@@ -89,7 +89,7 @@ new Vue({
                 setTimeout(() => {
                     axios.put('/users', this.userForm).then(function (response) {
                         console.log(response);
-                        if (response.data.code == 40071) {
+                        if (response.data.code == 40011) {
                             _this.$message({
                                 type: 'success',
                                 message: '注册成功'
