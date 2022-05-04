@@ -9,6 +9,12 @@
 > - 部署环境: [Tomcat](https://www.apache.org/tomcat/), [腾讯云](https://cloud.tencent.com/)
 > - 代码托管: [GitHub](https://github.com/xianlin520/XianLinWebDemo_SpringBoot) And [Gitee](https://gitee.com/xianlin-i/xian-lin-web-demo_-spring-boot)
 ---
+> ### 2022年5月4日 - 升级交互逻辑
+> - 添加后端Session支持, 实现登录状态检测(拦截器)
+> - 前端登录后, 后端获取用户信息, 并存入Session
+> - 前端登录后, 从后端获取用户信息, 并存入LocalStorage本地存储
+> - 优点: 可完成动态网页部署, 为以后的网站构建提供支持
+
 > ### 2022年5月3日 - 将Mybatis改为MybatisPlus
 > - 原因: MybatisPlus相对于传统的Mybatis, 更加快捷,方便
 > - 将SpringBoot项目内代码逻辑升级为MybatisPlus
