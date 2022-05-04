@@ -20,6 +20,15 @@ public class UserData {
         this.userPassword = userPassword;
     }
     
+    @Override
+    public String toString() {
+        return "UserData{" +
+                "userQQ='" + userQQ + '\'' +
+                ", userName='" + userName + '\'' +
+                ", userPassword='" + userPassword + '\'' +
+                '}';
+    }
+    
     public UserData() {
     }
     

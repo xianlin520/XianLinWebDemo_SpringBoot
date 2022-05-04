@@ -3,23 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>注册</title>
+    <script src="../js/vue.js"></script>
+    <link href="../element-ui/lib/theme-chalk/index.css" rel="stylesheet">
+    <script src="../element-ui/lib/index.js"></script>
+    <script src="../js/axios.min.js"></script>
 </head>
 <body>
+
 </body>
 <script>
-    let data = ["1", "6", "8"];
-    let dataEntries = data.entries();
-    /*for (let datum of dataEntries) {
-        console.log(datum);
-    }
-    for (let datum of data) {
-        console.log(datum);
-
-    }*/
-    data.forEach(function (value, index, array) {
-        console.log(value);
-        console.log(index);
-        console.log(array);
-    });
+    let item = localStorage.getItem('UserData'); // 获取本地储存的信息, 用于同域名下的跨页面访问
+    console.log(item);
 </script>
 </html>
