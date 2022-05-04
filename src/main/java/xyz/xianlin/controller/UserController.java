@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.*;
 import xyz.xianlin.domain.UserData;
 import xyz.xianlin.service.impl.UserServiceImpl;
 
+import java.util.UUID;
+
 @RestController // 标记为控制器
 @RequestMapping("/users") // 指定请求路径
 public class UserController {
@@ -22,7 +24,13 @@ public class UserController {
     @PostMapping // 指定请求方式为POST, 用于查询用户密码是否正确
     public Result selectByUserQQAndUserPassword(@RequestBody UserData userData) {
         UserData userDataRet = userService.selectByUserQQAndUserPassword(userData);
-        return new Result(userDataRet != null ? Code.POST_OK : Code.POST_ERR, userDataRet);
+        if (userDataRet != null) {
+            String token = UUID.randomUUID().toString();
+            System.out.println(token);
+            return new Result(Code.POST_OK, userDataRet);
+        }
+        return new Result(Code.POST_ERR, userData, "用户名或密码错误");
+        
     }
     @PutMapping // 指定请求方式为PUT, 用于插入新用户
     public Result insertUser(@RequestBody UserData userData) {

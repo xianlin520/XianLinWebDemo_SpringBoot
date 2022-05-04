@@ -16,13 +16,24 @@ spring:
     password: 1234
 
 ---
-# 设置pro生产环境
+# 设置test生产环境
+spring:
+  profiles: test
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    Type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://bj-cynosdbmysql-grp-9d5xmnss.sql.tencentcdb.com:21898/webdata?useSSL=false
+    username: root
+    password: wgw147741QWE
+
+---
+# 设置prod生产环境
 spring:
   profiles: prod
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     Type: com.alibaba.druid.pool.DruidDataSource
-    url: jdbc:mysql://bj-cynosdbmysql-grp-9d5xmnss.sql.tencentcdb.com:21898/webdata?useSSL=false
+    url: jdbc:mysql://172.21.0.13:3306/webdata?useSSL=false
     username: root
     password: wgw147741QWE
 
