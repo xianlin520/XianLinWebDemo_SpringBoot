@@ -17,4 +17,10 @@ public interface MusicService {
      * @param musicData 用户QQ和音乐ID
      */
     void addMusic(MusicData musicData);
+    
+    /**
+     * 删除用户收藏的音乐
+     * @param musicData 用户QQ和音乐ID
+     */
+    void deleteMusic(MusicData musicData);
 }

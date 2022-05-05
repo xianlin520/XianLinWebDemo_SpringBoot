@@ -31,7 +31,7 @@ new Vue({
             UserData = JSON.parse(UserData);
             // console.log(userQQ);
             let userQQ = UserData.userQQ;
-            axios.put("/music", {"userQQ":userQQ, "musicId": id}).then(response => {
+            axios.put("/musics", {"userQQ":userQQ, "musicId": id}).then(response => {
                 // console.log(response.data);
                 if (response.data.code == 40011) {
                     _this.$message({
@@ -80,7 +80,19 @@ new Vue({
     data() {
         return {
             InputName: "",
-            SongData: {
+            SongData: {"Id": 167882,
+                "Music": "清明雨上",
+                "Cover": "http://p3.music.126.net/KyBR4ZDYFlzQJE_uyvfjpA==/109951166118671647.jpg",
+                "Singer_Array": [
+                    "许嵩"
+                ],
+                "Singer": "许嵩",
+                "Url": "http://music.163.com/song/media/outer/url?id=167882",
+                "Music_Url": "https://music.163.com/#/song?id=167882"
+
+            },
+            SongDataList: [],
+            /*SongData: {
                 "Id": 167882,
                 "Music": "清明雨上",
                 "Cover": "http://p3.music.126.net/KyBR4ZDYFlzQJE_uyvfjpA==/109951166118671647.jpg",
@@ -100,7 +112,7 @@ new Vue({
                     "song": "有何不可",
                     "singer": ["许嵩"],
                     "singers": "许嵩"
-                }],
+                }],*/
             showText: "",
         }
     }

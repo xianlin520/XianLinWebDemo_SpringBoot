@@ -28,6 +28,34 @@
         <el-container>
             <el-aside width="500px">
 
+                <template>
+                    <el-table
+                            :data="MusicDataList"
+                            style="width: 500px">
+                        <el-table-column
+                                label="歌名"
+                                prop="Music"
+                                width="200">
+                        </el-table-column>
+                        <el-table-column
+                                label="歌手"
+                                prop="Singer"
+                                width="100">
+                        </el-table-column>
+                        <el-table-column
+                                align="right">
+                            <template slot-scope="scope">
+                                <el-button
+                                        @click="player(scope.$index)"
+                                        icon="el-icon-video-play"
+                                        size="mini"
+                                        type="primary">播放
+                                </el-button>
+                                <el-button type="warning" icon="el-icon-star-off" circle @click="collectSong(scope.$index)"></el-button>
+                            </template>
+                        </el-table-column>
+                    </el-table>
+                </template>
 
             </el-aside>
             <el-col :span="1"><div class="grid-content bg-purple-dark"></div></el-col>
@@ -58,5 +86,6 @@
 
 
 <script src="../js/user-home.js"></script>
+<script src="../js/user-home-chat.js"></script>
 </body>
 </html>

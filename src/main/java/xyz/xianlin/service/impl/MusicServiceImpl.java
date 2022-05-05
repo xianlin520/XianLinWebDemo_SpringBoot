@@ -27,4 +27,12 @@ public class MusicServiceImpl implements MusicService {
         musicData.setqId(s);
         musicDao.insert(musicData);
     }
+    
+    @Override
+    public void deleteMusic(MusicData musicData) {
+        QueryWrapper<MusicData> queryWrapper = new QueryWrapper<>();
+        String s = musicData.getUserQQ() + musicData.getMusicId() + "";
+        queryWrapper.eq("q_id", s);
+        musicDao.delete(queryWrapper);
+    }
 }

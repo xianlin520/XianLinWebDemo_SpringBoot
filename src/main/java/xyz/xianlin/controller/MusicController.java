@@ -8,7 +8,7 @@ import xyz.xianlin.service.impl.MusicServiceImpl;
 import java.util.List;
 
 @RestController // 标记为控制器
-@RequestMapping("/music") // 指定请求路径
+@RequestMapping("/musics") // 指定请求路径
 public class MusicController {
     @Autowired
     private MusicServiceImpl musicService;
@@ -19,7 +19,7 @@ public class MusicController {
         return new Result(Code.GET_OK, musicList);
     }
     
-    @PutMapping // 指定请求方式为PUT, 用于插入新用户
+    @PutMapping // 指定请求方式为PUT, 用于插入新数据
     public Result insertUser(@RequestBody MusicData musicData) {
         try {
             musicService.addMusic(musicData);
@@ -27,6 +27,14 @@ public class MusicController {
         } catch (Exception e) {
             return new Result(Code.PUT_ERR, musicData, "数据插入失败, 数据库内已存在该数据");
         }
-        
+    }
+    @DeleteMapping
+    public Result deleteUser(@RequestBody MusicData musicData) {
+        try {
+            musicService.deleteMusic(musicData);
+            return new Result(Code.DELETE_OK, musicData, "数据删除成功");
+        } catch (Exception e) {
+            return new Result(Code.DELETE_ERR, musicData, "数据删除失败, 数据库内不存在该数据");
+        }
     }
 }

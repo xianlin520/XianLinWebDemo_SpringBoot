@@ -4,8 +4,9 @@ package xyz.xianlin.controller;
 public class Code {
     /**
      * 查询头: 300
-     * 注册头: 400
      * 登录头: 200
+     * 注册头: 400
+     * 删除头: 400
      * <p>
      * 成功尾: 11
      * 失败尾: 10
@@ -25,7 +26,9 @@ public class Code {
     // 注册状态码, 400表示注册操作, 40031表示注册成功, 40030表示注册失败
     public static final Integer PUT_OK = 40011;
     public static final Integer PUT_ERR = 40010;
-    
+    // 删除状态码, 400表示删除操作, 40011表示删除成功, 40010表示删除失败
+    public static final Integer DELETE_OK = 40011;
+    public static final Integer DELETE_ERR = 40010;
     // 异常状态码, 50010表示系统异常, 50020表示业务异常, 未知异常状态码: 50050
     public static final Integer SYSTEM_ERR = 50010;
     public static final Integer BUSINESS_ERR = 50020;
