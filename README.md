@@ -10,6 +10,10 @@
 > - 部署环境: [Tomcat](https://www.apache.org/tomcat/), [腾讯云](https://cloud.tencent.com/)
 > - 代码托管: [GitHub](https://github.com/xianlin520/XianLinWebDemo_SpringBoot) And [Gitee](https://gitee.com/xianlin-i/xian-lin-web-demo_-spring-boot)
 ---
+> ### 2022年5月5日 - 更新音乐收藏功能, 和个人主页
+> - 在原音乐播放页面上, 添加收藏功能, 并在个人主页上展现收藏的音乐
+
+
 > ### 2022年5月4日 - 升级交互逻辑
 > - 添加后端Session支持, 实现登录状态检测(拦截器)
 > - 前端登录后, 后端获取用户信息, 并存入Session

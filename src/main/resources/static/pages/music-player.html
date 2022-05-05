@@ -90,8 +90,9 @@
                                                     @click="player(scope.$index)"
                                                     icon="el-icon-video-play"
                                                     size="mini"
-                                                    type="primary">播放
+                                            type="primary">播放
                                             </el-button>
+                                            <el-button type="warning" icon="el-icon-star-off" circle @click="collectSong(scope.$index)"></el-button>
                                         </template>
                                     </el-table-column>
                                 </el-table>

@@ -24,6 +24,28 @@ new Vue({
                     console.log(error);
                 });
         },
+        collectSong(songIndex) {
+            let _this = this;
+            let id = "msg="+this.InputName + "&n=" + (songIndex + 1);
+            let UserData = localStorage.getItem("UserData");
+            UserData = JSON.parse(UserData);
+            // console.log(userQQ);
+            let userQQ = UserData.userQQ;
+            axios.put("/music", {"userQQ":userQQ, "musicId": id}).then(response => {
+                // console.log(response.data);
+                if (response.data.code == 40011) {
+                    _this.$message({
+                        message: '收藏成功',
+                        type: 'success'
+                    });
+                }else {
+                    _this.$message({
+                        message: '已经收藏过了',
+                        type: 'warning'
+                    });
+                }
+            })
+        },
         player(song) {
             var _this = this;
             // console.log(song);
