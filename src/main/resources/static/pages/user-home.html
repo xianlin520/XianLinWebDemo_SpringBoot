@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>XianLin|用户主页 </title>
+    <link href="../img/XianLinICO.ico" rel="shortcut icon" type="image/x-icon">
+    <!--引入css-->
+    <link href="../css/user-home.css" rel="stylesheet">
+    <script src="../js/vue.js"></script>
+    <link href="../element-ui/lib/theme-chalk/index.css" rel="stylesheet">
+    <script src="../element-ui/lib/index.js"></script>
+    <script src="../js/axios.min.js"></script>
+</head>
+<body>
+<div id="user-home">
+    <!--主容器-->
+    <el-container>
+
+        <el-header>
+            <el-col :span="19"><div class="grid-content bg-purple-light"></div></el-col>
+            <!--个人信息展示-->
+            <el-col :span="5"><div class="grid-content bg-purple">
+                <!--使用编辑图标, 不使用下划线, 点击文字触发click事件-->
+                <el-link icon="el-icon-edit" :underline="false" @click="edit">{{UserData.userName}} ({{UserData.userQQ}})</el-link>
+            </div></el-col>
+        </el-header>
+        <el-col :span="24"><div class="grid-content bg-purple-dark" style="height: 50px"></div></el-col>
+        <el-container>
+            <el-aside width="500px">
+
+
+            </el-aside>
+            <el-col :span="1"><div class="grid-content bg-purple-dark"></div></el-col>
+            <el-main>
+
+
+            </el-main>
+            <el-col :span="4"><div class="grid-content bg-purple-dark"></div></el-col>
+        </el-container>
+    </el-container>
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<script src="../js/user-home.js"></script>
+</body>
+</html>

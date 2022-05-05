@@ -5,6 +5,7 @@
 > - 前端框架: [Vue](https://cn.vuejs.org/) 页面元素框架: [Element-UI](https://element.eleme.cn/)
 > - 后端语言: [Java](https://www.java.com/)  - JDK1.8
     | 框架: [Spring Boot](https://spring.io/projects/spring-boot) | [Mybatis-Plus](https://baomidou.com)
+> - 前后端交互框架: [Axios](https://www.axios-http.cn/)
 > - 数据库: [MySQL](https://www.mysql.com/)
 > - 部署环境: [Tomcat](https://www.apache.org/tomcat/), [腾讯云](https://cloud.tencent.com/)
 > - 代码托管: [GitHub](https://github.com/xianlin520/XianLinWebDemo_SpringBoot) And [Gitee](https://gitee.com/xianlin-i/xian-lin-web-demo_-spring-boot)

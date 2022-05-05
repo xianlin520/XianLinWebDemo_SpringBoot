@@ -48,7 +48,7 @@ new Vue({
             });
         },
         check: function () {
-            _this = this;
+            let _this = this;
             axios.get('/users/' + this.userForm.userQQ).then(function (response) {
                 console.log(response);
                 if (response.data.code == 30011) {
@@ -73,7 +73,7 @@ new Vue({
         },
         open() {
             // this.dialogVisible = true;
-            _this = this;
+            let _this = this;
             this.userForm.userPassword = this.ruleForm.checkPass;
             this.checkByUserInfo();
             const loading = this.$loading({
@@ -92,13 +92,16 @@ new Vue({
                         if (response.data.code == 40011) {
                             _this.$message({
                                 type: 'success',
-                                message: '注册成功'
+                                message: '注册成功, 会自动跳转登录页面',
                             });
                         } else {
                             _this.$message.error("注册失败");
                         }
-
-                        this.dialogVisible = false;
+                        _this.dialogVisible = false;
+                        setTimeout(() => {
+                            // 跳转到登录页面
+                            location.href='pages/login.html';
+                        }, 900);
                     })
                 }, 800);
             } else {
