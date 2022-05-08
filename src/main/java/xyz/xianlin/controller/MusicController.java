@@ -8,6 +8,7 @@ import xyz.xianlin.service.impl.MusicServiceImpl;
 import java.util.List;
 
 @RestController // 标记为控制器
+@CrossOrigin // 解决跨域问题
 @RequestMapping("/musics") // 指定请求路径
 public class MusicController {
     @Autowired

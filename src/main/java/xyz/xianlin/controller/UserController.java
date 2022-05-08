@@ -8,6 +8,7 @@ import xyz.xianlin.service.impl.UserServiceImpl;
 import javax.servlet.http.HttpServletRequest;
 
 @RestController // 标记为控制器
+@CrossOrigin // 解决跨域问题
 @RequestMapping("/users") // 指定请求路径
 public class UserController {
     @Autowired // 注入UserService
