@@ -1,5 +1,5 @@
 body {
-    background-image: url("../img/setting1.png");
+    background-image: url("https://s2.loli.net/2022/05/25/rsez4cl2Hb3IXqD.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -27,7 +27,7 @@ body {
 }
 
 .el-main {
-    background-color: #E9EEF3;
+    /*background-color: #E9EEF3;*/
     color: #333;
     text-align: center;
     line-height: 160px;

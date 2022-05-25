@@ -1,9 +1,10 @@
 server:
   port: 80
+
 # 使用开发环境
 spring:
   profiles:
-    active: dev
+    active: prod
 #    active: test
 ---
 # 设置dev开发环境

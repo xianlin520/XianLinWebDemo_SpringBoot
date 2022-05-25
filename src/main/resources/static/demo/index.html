@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--引入css-->
+    <link href="index.css" rel="stylesheet">
+    <script src="../js/vue.js"></script>
+    <link href="../element-ui/lib/theme-chalk/index.css" rel="stylesheet">
+    <script src="../element-ui/lib/index.js"></script>
+    <script src="../js/axios.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <el-row>
+        <el-col :span="24"><div class="grid-content bg-purple-dark"></div></el-col>
+    </el-row>
+    <el-row>
+        <el-col :span="8"><div class="grid-content bg-purple"></div></el-col>
+        <el-col :span="3"><div class="grid-content bg-purple-light">
+            <!--增加数据列表-->
+            <ul v-if="show">
+                <li style="list-style:none" v-for="item in dataList" :key="item.id">
+                    <el-checkbox v-model="item.bool">{{item.name}}</el-checkbox>
+                </li>
+            </ul>
+            <!--删除数据列表-->
+            <ul v-if="!show">
+                <li style="list-style:none" v-for="item in bData" :key="item.id">
+                    <el-checkbox v-model="item.bool">{{item.name}}</el-checkbox>
+                </li>
+            </ul>
+        </div></el-col>
+        <el-col :span="4"><div class="grid-content bg-purple">
+            <el-button type="warning" @click="show=!show" >Switch</el-button>
+            <el-button v-if="show" type="success" @click="addBData">Add</el-button>
+            <el-button v-if="!show" type="danger" @click="delBData">Del</el-button>
+            <el-button type="primary" @click="refresh">Refresh</el-button>
+        </div></el-col>
+        <el-col :span="3"><div class="grid-content bg-purple-light">
+            <!--增加数据显示列表-->
+            <ul v-if="show">
+                <li style="list-style:none" v-for="item in dataList" :key="item.id">
+                    <el-checkbox v-if="item.bool" v-model="item.bool">{{item.name}}</el-checkbox>
+                </li>
+            </ul>
+            <!--删除数据显示列表-->
+            <ul v-if="!show">
+                <li style="list-style:none" v-for="item in bData" :key="item.id">
+                    <el-checkbox v-if="item.bool" v-model="item.bool">{{item.name}}</el-checkbox>
+                </li>
+            </ul>
+        </div></el-col>
+        <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
+    </el-row>
+
+</div>
+<script src="index.js"></script>
+</body>
+</html>

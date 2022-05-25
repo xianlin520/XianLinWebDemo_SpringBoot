@@ -14,15 +14,9 @@ public class UserController {
     @Autowired // 注入UserService
     private UserServiceImpl userService;
     
-    /*@GetMapping
-    public Result selectAllUser() {
-    
-    
-    }*/
     @GetMapping("/{userQQ}") // 指定请求方式为GET, 用于查询用户是否存在
     public Result selectByUserQQ(@PathVariable String userQQ) {
         UserData userData = userService.selectByUserQQ(userQQ);
-//        System.out.println(userData);
         return new Result(userData != null ? Code.GET_OK : Code.GET_ERR, userData);
     }
     
@@ -30,7 +24,6 @@ public class UserController {
     @ResponseBody // 指定返回结果为JSON
     public Result selectByUserQQAndUserPassword(@RequestBody UserData userData, HttpServletRequest request) {
         UserData userDataRet = userService.selectByUserQQAndUserPassword(userData);
-//        System.out.println("userDataRet: " + userDataRet);
         if (userDataRet != null) {
             // 创建Session
             request.getSession().setAttribute("UserData", userDataRet); // 将userDataRet存入Session中的UserData
